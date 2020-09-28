@@ -8,24 +8,19 @@ import java.util.Arrays;
  */
 public class Task_7 {
     public static void main(String[] args) {
-        int[] arr = new int[101];
-        int x;
-        for (int i = 2; i < arr.length; i++)
+
+        for (int i = 2; i < 101; i++)
         {
-            boolean f = true;
-            arr[i]=i;
-            x = arr[i];
-            for(int p = 2; p < x;p++)
+            boolean isSimple = true;
+            for(int p = 2; p < i;p++)
             {
 
-                if (x%p==0){
-                    f = false;
+                if (i%p==0){
+                    isSimple = false;
                     break;
                 }
-
             }
-            if (f)System.out.println("Prostoe: " + x);
-
+            if (isSimple)System.out.println("Prostoe: " + i);
         }
     }
     }

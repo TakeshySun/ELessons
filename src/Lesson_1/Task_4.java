@@ -12,18 +12,17 @@ public class Task_4 {
     public static void main(String[] args) {
 
         String x = "PHP Exercises and";
-        String y = "Python Exercises";
+        String y = "python Exercises";
 
-        System.out.println(remove(x,y));;
-
-    }
-
-    static String remove(String x, String y) {
         String together = x + " " + y;
 //        or
         String together2 = x.concat(y);
 
-        return together.replace("P", "");
+        System.out.println(remove(together));;
+    }
+
+    static String remove(String incomeString) {
+        return incomeString.replace("P", "").replace("p", "");
 //        return together2;
     }
 }

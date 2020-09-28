@@ -12,32 +12,22 @@ public class Task_1 {
     }
 
     static void sum(int a, int b){
-        int result;
-        result = a + b;
-        System.out.println(result);
+        System.out.println(a + b);
     }
 
     static void multiply(int a, int b){
-        int result;
-        result = a * b;
-        System.out.println(result);
+        System.out.println(a * b);
     }
 
     static void subtract(int a, int b){
-        int result;
-        result = a - b;
-        System.out.println(result);
+        System.out.println(a - b);
     }
 
     static void divide (int a, int b){
-        int result;
-        result = a / b;
-        System.out.println(result);
+        System.out.println(a / b);
     }
 
     static void remainder_of_two_numbers (int a, int b){
-        int result;
-        result = a % b;
-        System.out.println(result);
+        System.out.println(a % b);
     }
 }

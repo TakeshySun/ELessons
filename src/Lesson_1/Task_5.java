@@ -19,12 +19,10 @@ public class Task_5 {
 
         return y;
     }
-/*
-почему тут ошибка, как избежать индекс -1 ?
- */
+
     void revert(String x){
         char[] y = x.toCharArray();
-        for (int i = y.length-1; i < y.length+1; i--){
+        for (int i = y.length-1; i >= 0; i--){
             System.out.print(y[i]);
         }
     }

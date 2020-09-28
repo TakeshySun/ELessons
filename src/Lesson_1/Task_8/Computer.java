@@ -15,6 +15,13 @@ public class Computer {
     int coreNumber;
     String type;
 
+    public Computer(String brand, int x, int y){
+        this.brand = brand;
+        setScreenSize(x, y);
+    }
+
+    public Computer(){};
+
     public String getBrand() {
         return brand;
     }
@@ -46,13 +53,6 @@ public class Computer {
     public void setType(String type) {
         this.type = type;
     }
-
-    public Computer(String brand, int x, int y){
-        this.brand = brand;
-        setScreenSize(x, y);
-    }
-
-    public Computer(){};
 
     public void getPcSettings(){
         System.out.println("___________________________");
