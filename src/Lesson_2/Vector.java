@@ -76,11 +76,5 @@ public class Vector {
             System.out.println(array[i]);
         }
 
-        int builderManual = 50;
-        System.out.println(builderManual);
-        int cross = 1+ 1+4+1+1+3+2+4+2+2+4+3+1+9+1+1+1+2+5+1+2+1+1+1+2+1+3+1;
-        System.out.println(cross);
-        System.out.println(builderManual + cross);
-
     }
 }
