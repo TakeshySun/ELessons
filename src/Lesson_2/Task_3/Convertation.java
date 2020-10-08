@@ -6,9 +6,13 @@ public class Convertation {
         FahrenheitConverter f = new FahrenheitConverter();
 
         c.convert(86);
+        System.out.println(c.getC());
         f.convert(30);
+        System.out.println(f.getF());
         System.out.println("-------");
         c.convert(-459.67);
+        System.out.println(c.getC());
         f.convert(-273.15);
+        System.out.println(f.getF());
     }
 }
