@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.B2C_Accelerator.MainPage;
+import Pages.PropertyReader;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,24 +22,23 @@ public class Automation_Task_2 {
     MainPage mainPage;
 
     @Before
-    public void setUp(){
+    public void setUp() throws Exception {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--ignore-certificate-errors");
         driver = new ChromeDriver(options);
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Oleksandr_Eskin\\IdeaProjects\\Epa_Lessons\\chromedriver.exe");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://ecsc00a07e9f.epam.com:9002/yacceleratorstorefront/?site=electronics");
+        driver.get(PropertyReader.getProperties("url"));
+        mainPage = new MainPage(driver);
     }
 
     @Test
     public void printPageTitleAndUrl(){
-        mainPage = new MainPage(driver);
 //        - зайти на сторінку, вивести на екран назву сторіки та її url
         System.out.println(driver.getCurrentUrl());
         System.out.println(driver.getTitle());
         System.out.println();
 //        - перейти на іншу сторінку та вивести на екран назву сторіки та її url
-        mainPage.clickNavLinkBrands();
+        mainPage.clickNavLinkByText("Brands");
         System.out.println(driver.getCurrentUrl());
         System.out.println(driver.getTitle());
         System.out.println();

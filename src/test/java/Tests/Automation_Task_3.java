@@ -25,7 +25,8 @@ public class Automation_Task_3 {
     public void setUp(){
         driver = new ChromeDriver();
         mainPage = new MainPage(driver);
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Oleksandr_Eskin\\IdeaProjects\\Epa_Lessons\\chromedriver.exe");
+        // HOW WB is running Chrome without path property?
+//        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Oleksandr_Eskin\\IdeaProjects\\Epa_Lessons\\chromedriver.exe");
         driver.get("https://gloss.ua");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -34,7 +35,6 @@ public class Automation_Task_3 {
     @Test
 //    @Ignore
     public void printAllNewsTitles(){
-
         mainPage.stopPageLoading();
         System.out.println(mainPage.returnAllArticleNames());
     }
