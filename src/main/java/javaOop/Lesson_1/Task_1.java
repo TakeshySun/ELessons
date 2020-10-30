@@ -1,4 +1,4 @@
-package Lesson_1;
+package javaOop.Lesson_1;
 
 public class Task_1 {
     public static void main(String[] args) {

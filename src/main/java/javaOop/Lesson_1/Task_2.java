@@ -1,4 +1,4 @@
-package Lesson_1;
+package javaOop.Lesson_1;
 
 import java.util.Random;
 

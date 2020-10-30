@@ -1,4 +1,4 @@
-package Lesson_1.Task_8;
+package javaOop.Lesson_1.Task_8;
 /*
 Design such Java class with name Computer and such properties as:
 - Brand

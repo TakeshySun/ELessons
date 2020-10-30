@@ -1,4 +1,4 @@
-package Lesson_2.Task_2;
+package javaOop.Lesson_2.Task_2;
 
 public class Shape {
     private double volume;

@@ -1,6 +1,4 @@
-package Lesson_1;
-
-import java.util.Arrays;
+package javaOop.Lesson_1;
 
 /**
  * Write a Java program to find the duplicate values of an array of integer values.

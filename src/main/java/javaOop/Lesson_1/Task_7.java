@@ -1,6 +1,4 @@
-package Lesson_1;
-
-import java.util.Arrays;
+package javaOop.Lesson_1;
 
 /*
 Напишите программу, которая выводит на консоль простые числа в промежутке от [2, 100].

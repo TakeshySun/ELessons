@@ -1,4 +1,4 @@
-package Lesson_1;
+package javaOop.Lesson_1;
 
 /*
  * Write a Java program to concatenate a given string to the end of another string. And remove all `P` or `p` characters.

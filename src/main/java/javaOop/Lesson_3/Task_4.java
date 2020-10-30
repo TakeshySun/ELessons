@@ -1,7 +1,6 @@
-package Lesson_3;
+package javaOop.Lesson_3;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeSet;
 

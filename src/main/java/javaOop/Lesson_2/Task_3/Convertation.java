@@ -1,4 +1,4 @@
-package Lesson_2.Task_3;
+package javaOop.Lesson_2.Task_3;
 
 public class Convertation {
     public static void main(String[] args) {

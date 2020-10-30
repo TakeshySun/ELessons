@@ -1,4 +1,4 @@
-package Lesson_3;
+package javaOop.Lesson_3;
 /*
 Написати метод, який на вхід принімає колекцію обєктів V (Generic),
 в якій є дублючі обєкти,

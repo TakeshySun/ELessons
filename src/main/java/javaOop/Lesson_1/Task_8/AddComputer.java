@@ -1,4 +1,4 @@
-package Lesson_1.Task_8;
+package javaOop.Lesson_1.Task_8;
 
 public class AddComputer {
 

@@ -1,4 +1,4 @@
-package Lesson_2.Task_3;
+package javaOop.Lesson_2.Task_3;
 // °C = (°F -32) / 1,8  или наоборот  °F = (°C * 1,8) + 32
 
 public class KelvinConverter implements Converter{
