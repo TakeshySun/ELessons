@@ -1,6 +1,6 @@
 package Tests;
 
-import Pages.B2C_Accelerator.MainPageB2C;
+import Pages.B2C_Accelerator.MainPage;
 import Pages.PropertyReader;
 import org.junit.After;
 import org.junit.Before;
@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Automation_Task_2 {
     WebDriver driver;
-    MainPageB2C mainPageB2C;
+    MainPage mainPage;
 
     @Before
     public void setUp() throws Exception {
@@ -28,7 +28,7 @@ public class Automation_Task_2 {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(PropertyReader.getProperties("url"));
-        mainPageB2C = new MainPageB2C(driver);
+        mainPage = new MainPage(driver);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class Automation_Task_2 {
         System.out.println(driver.getTitle());
         System.out.println();
 //        - перейти на іншу сторінку та вивести на екран назву сторіки та її url
-        mainPageB2C.clickNavLinkByText("Brands");
+        mainPage.clickNavLinkByText("Brands");
         System.out.println(driver.getCurrentUrl());
         System.out.println(driver.getTitle());
         System.out.println();
