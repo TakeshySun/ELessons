@@ -7,13 +7,13 @@ import org.openqa.selenium.WebElement;
 
 import java.util.*;
 
-public class MainPage {
+public class MainPageGloss {
     WebDriver driver;
     By articleNamesOnPage = By.cssSelector("h4");
     By articleDescriptionsOnPage = By.cssSelector("a > p");
     By allUrlsOnPage = By.xpath("//a[contains(@href, 'https')]");
 
-    public MainPage(WebDriver driver) {
+    public MainPageGloss(WebDriver driver) {
         this.driver = driver;
     }
 

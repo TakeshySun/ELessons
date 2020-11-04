@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class MainPage {
+public class MainPageB2C {
     WebDriver driver;
 
     By siteLogo = By.className("nav__left js-site-logo");
@@ -19,7 +19,7 @@ public class MainPage {
     By searchResults = By.xpath("//a[@class='product__list--name']");
     By closeAddToCartPopUpButton = By.cssSelector("ul > li > div > button > span");
 
-    public MainPage(WebDriver driver) {
+    public MainPageB2C(WebDriver driver) {
         this.driver = driver;
     }
 

@@ -7,10 +7,9 @@ package Tests;
 - вивести на екран список усіх силок (унікальних), які є на головній сторінці
  */
 
-import Pages.GlossUa.MainPage;
+import Pages.GlossUa.MainPageGloss;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,12 +18,12 @@ import java.util.concurrent.TimeUnit;
 
 public class Automation_Task_3 {
     WebDriver driver;
-    MainPage mainPage;
+    MainPageGloss mainPageGloss;
 
     @Before
     public void setUp(){
         driver = new ChromeDriver();
-        mainPage = new MainPage(driver);
+        mainPageGloss = new MainPageGloss(driver);
         // HOW WB is running Chrome without path property?
 //        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Oleksandr_Eskin\\IdeaProjects\\Epa_Lessons\\chromedriver.exe");
         driver.get("https://gloss.ua");
@@ -35,13 +34,13 @@ public class Automation_Task_3 {
     @Test
 //    @Ignore
     public void printAllNewsTitles(){
-        mainPage.stopPageLoading();
-        System.out.println(mainPage.returnAllArticleNames());
+        mainPageGloss.stopPageLoading();
+        System.out.println(mainPageGloss.returnAllArticleNames());
     }
 
     @Test
     public void printAllNewsUrls(){
-       mainPage.returnAllUniqueUrls();
+       mainPageGloss.returnAllUniqueUrls();
     }
 
     @After
