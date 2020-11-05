@@ -1,4 +1,4 @@
-package Tests;
+package Tests.jUnit;
 
 import Pages.B2C_Accelerator.MainPage;
 import Pages.PropertyReader;
@@ -28,24 +28,34 @@ Also create runner classes which will run your test by selected package/class/ta
 Browser opening/closing move to @BeforeAll and @AfterAll hooks.
 
  */
-public class jUnitAutomationTask {
-    WebDriver driver;
-    MainPage mainPage;
-    SoftAssertions softly = new SoftAssertions();
+public class JUnitAutomationTaskTest {
+    static WebDriver driver;
+    static MainPage mainPage;
+    static SoftAssertions softly;
 
-    @BeforeEach
-    public void setUp() throws Exception {
+    @BeforeAll
+    static void setUpDriver(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--ignore-certificate-errors");
         driver = new ChromeDriver(options);
+        mainPage = new MainPage(driver);
+        softly = new SoftAssertions();
+    }
+
+    @BeforeEach
+    public void setUp() throws Exception {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(PropertyReader.getProperties("url"));
-        mainPage = new MainPage(driver);
     }
 
     @AfterEach
     public void close(){
-        driver.close();
+        driver.quit();
+    }
+
+    @AfterAll
+    static void info(){
+        System.out.println("We are done");
     }
 
     @DisplayName("Subtotal, Total and Tax verification")

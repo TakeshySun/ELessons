@@ -1,4 +1,4 @@
-package Tests;
+package Tests.AutomationTasks;
 
 import Pages.B2C_Accelerator.MainPage;
 import Pages.PropertyReader;

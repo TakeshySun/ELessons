@@ -1,4 +1,4 @@
-package Tests;
+package Tests.AutomationTasks;
 /*
 Завдання 3
 Робота з багатьма елементами:
