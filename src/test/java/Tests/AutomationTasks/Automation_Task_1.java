@@ -1,6 +1,6 @@
-package Tests;
+package Tests.AutomationTasks;
 
-import Pages.B2C_Accelerator.MainPageB2C;
+import Pages.B2C_Accelerator.MainPage;
 import Pages.PropertyReader;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +20,7 @@ In the test write code that opens the chosen internet shop in Chrome browser.
 
 public class Automation_Task_1 {
     WebDriver driver;
-    MainPageB2C mainPageB2C;
+    MainPage mainPage;
 
     @Before
     public void setUp() throws Exception {
@@ -29,15 +29,15 @@ public class Automation_Task_1 {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(PropertyReader.getProperties("url"));
-        mainPageB2C = new MainPageB2C(driver);
+        mainPage = new MainPage(driver);
     }
 
     @Test
     public void test(){
-        mainPageB2C.fillInSearchField("camileo");
-        mainPageB2C.clickSearchButton();
-        mainPageB2C.addToCartByProductName("S10 EU");
-        mainPageB2C.closeAddToCartPopUp();
-        mainPageB2C.clickOnProductInSearchResultList("S10 EU");
+        mainPage.fillInSearchField("camileo");
+        mainPage.clickSearchButton();
+        mainPage.addToCartByProductName("S10 EU 5MP CMOS");
+        mainPage.closeAddToCartPopUp();
+        mainPage.openProductFromSearchResults("S10 EU 5MP CMOS");
     }
 }
