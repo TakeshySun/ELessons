@@ -1,19 +1,17 @@
-package Tests.jUnit;
+package Tests.PageObjectLesson;
 
 import Pages.B2C_Accelerator.MainPage;
-import Pages.PropertyReader;
-
+import Pages.driver.WebDriverSingleton;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.concurrent.TimeUnit;
+import static Pages.driver.WebDriverSingleton.initialize;
+import static Pages.driver.WebDriverSingleton.openurl;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
 Use your Maven project created before. In Test class use jUnit annotation Test and it's assertions. Do next:
@@ -29,28 +27,24 @@ Browser opening/closing move to @BeforeAll and @AfterAll hooks.
 
  */
 public class JUnitAutomationTaskTest {
-    static WebDriver driver;
     static MainPage mainPage;
     static SoftAssertions softly;
 
     @BeforeAll
     static void setUpDriver(){
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--ignore-certificate-errors");
-        driver = new ChromeDriver(options);
-        mainPage = new MainPage(driver);
+        initialize("chrome");
+        mainPage = new MainPage();
         softly = new SoftAssertions();
     }
 
     @BeforeEach
     public void setUp() throws Exception {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(PropertyReader.getProperties("url"));
+        openurl("url");
     }
 
     @AfterEach
-    public void close(){
-        driver.quit();
+    public void quit(){
+        WebDriverSingleton.quit();
     }
 
     @AfterAll

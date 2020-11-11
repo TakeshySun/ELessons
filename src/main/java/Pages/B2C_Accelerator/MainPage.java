@@ -1,10 +1,11 @@
 package Pages.B2C_Accelerator;
 
+import Pages.AbstarctClasses.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class MainPage {
-    WebDriver driver;
+public class MainPage extends BasePage {
+
 //TODO: Split all locators and methods to other page classes.
     By addToCart = By.id("addToCartButton");
 
@@ -32,9 +33,6 @@ public class MainPage {
     By searchButton = By.cssSelector("span > button > span");
     By searchResults = By.xpath("//a[@class='product__list--name']");
 
-    public MainPage(WebDriver driver) {
-        this.driver = driver;
-    }
 
     public void clickNavLinkByText(String navLinkText){
         String navigation = "//a[contains(text(), '%s')]";

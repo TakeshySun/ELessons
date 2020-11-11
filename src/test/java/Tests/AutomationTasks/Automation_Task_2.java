@@ -28,7 +28,7 @@ public class Automation_Task_2 {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(PropertyReader.getProperties("url"));
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
     }
 
     @Test
