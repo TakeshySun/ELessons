@@ -31,14 +31,14 @@ public class JUnitAutomationTaskTest {
     static SoftAssertions softly;
 
     @BeforeAll
-    static void setUpDriver(){
+    static void setUp(){
         initialize("chrome");
         mainPage = new MainPage();
         softly = new SoftAssertions();
     }
 
     @BeforeEach
-    public void setUp() throws Exception {
+    public void openUrl() throws Exception {
         openurl("url");
     }
 
