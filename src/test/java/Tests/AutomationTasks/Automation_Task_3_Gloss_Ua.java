@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Automation_Task_3 {
+public class Automation_Task_3_Gloss_Ua {
     WebDriver driver;
     MainPageGloss mainPageGloss;
 
