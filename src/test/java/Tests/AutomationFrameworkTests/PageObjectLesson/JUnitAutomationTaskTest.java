@@ -1,4 +1,4 @@
-package Tests.PageObjectLesson;
+package Tests.AutomationFrameworkTests.PageObjectLesson;
 
 import AutomationFramework.B2C_Accelerator.Page.*;
 import AutomationFramework.driver.WebDriverSingleton;
