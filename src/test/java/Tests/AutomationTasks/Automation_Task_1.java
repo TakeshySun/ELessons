@@ -1,9 +1,8 @@
 package Tests.AutomationTasks;
 
-import Pages.B2C_Accelerator.Page.MainPage;
-import Pages.PropertyReader;
+import AutomationFramework.B2C_Accelerator.Page.MainPage;
+import AutomationFramework.PropertyReader;
 import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

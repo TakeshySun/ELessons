@@ -1,9 +1,9 @@
-package Pages.driver;
+package AutomationFramework.driver;
 
 import java.util.concurrent.TimeUnit;
 
-import Pages.AbstarctClasses.BasePage;
-import Pages.PropertyReader;
+import AutomationFramework.AbstarctClasses.BasePage;
+import AutomationFramework.PropertyReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

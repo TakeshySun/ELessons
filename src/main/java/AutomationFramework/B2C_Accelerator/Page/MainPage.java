@@ -1,6 +1,6 @@
-package Pages.B2C_Accelerator.Page;
+package AutomationFramework.B2C_Accelerator.Page;
 
-import Pages.AbstarctClasses.BasePage;
+import AutomationFramework.AbstarctClasses.BasePage;
 import org.openqa.selenium.By;
 
 public class MainPage extends BasePage {

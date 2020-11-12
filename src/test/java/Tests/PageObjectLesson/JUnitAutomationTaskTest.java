@@ -1,7 +1,7 @@
 package Tests.PageObjectLesson;
 
-import Pages.B2C_Accelerator.Page.*;
-import Pages.driver.WebDriverSingleton;
+import AutomationFramework.B2C_Accelerator.Page.*;
+import AutomationFramework.driver.WebDriverSingleton;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;

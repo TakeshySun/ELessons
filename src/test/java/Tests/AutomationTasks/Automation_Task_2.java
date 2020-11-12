@@ -1,7 +1,7 @@
 package Tests.AutomationTasks;
 
-import Pages.B2C_Accelerator.Page.MainPage;
-import Pages.PropertyReader;
+import AutomationFramework.B2C_Accelerator.Page.MainPage;
+import AutomationFramework.PropertyReader;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
