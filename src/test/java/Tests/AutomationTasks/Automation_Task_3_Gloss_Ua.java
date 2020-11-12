@@ -7,7 +7,7 @@ package Tests.AutomationTasks;
 - вивести на екран список усіх силок (унікальних), які є на головній сторінці
  */
 
-import Pages.GlossUa.MainPageGloss;
+import GlossUa.MainPageGloss;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

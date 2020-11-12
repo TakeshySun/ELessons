@@ -1,6 +1,6 @@
 package Tests.PageObjectLesson;
 
-import Pages.B2C_Accelerator.MainPage;
+import Pages.B2C_Accelerator.Page.*;
 import Pages.driver.WebDriverSingleton;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
@@ -8,8 +8,6 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static Pages.driver.WebDriverSingleton.initialize;
-import static Pages.driver.WebDriverSingleton.openurl;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -27,24 +25,36 @@ Browser opening/closing move to @BeforeAll and @AfterAll hooks.
 
  */
 public class JUnitAutomationTaskTest {
-    static MainPage mainPage;
+    static WebDriverSingleton driver;
     static SoftAssertions softly;
+    static MainPage mainPage;
+    static CartPage cartPage;
+    static DeliveryAddress deliveryAddressPage;
+    static LoginCheckOutPage loginCheckOutPage;
+    static ProductPage productPage;
+    static SearchResultPage searchResultPage;
 
     @BeforeAll
     static void setUp(){
-        initialize("chrome");
+        driver = new WebDriverSingleton();
         mainPage = new MainPage();
         softly = new SoftAssertions();
+        cartPage = new CartPage();
+        loginCheckOutPage = new LoginCheckOutPage();
+        productPage = new ProductPage();
+        searchResultPage = new SearchResultPage();
+        deliveryAddressPage = new DeliveryAddress();
     }
 
     @BeforeEach
-    public void openUrl() throws Exception {
-        openurl("url");
+    public void setUpProcess() throws Exception {
+        driver.initialize("chrome");
+        driver.openurl("url");
     }
 
     @AfterEach
     public void quit(){
-        WebDriverSingleton.quit();
+        driver.quit();
     }
 
     @AfterAll
@@ -59,23 +69,23 @@ public class JUnitAutomationTaskTest {
     public void test(String input){
         mainPage.fillInSearchField(input);
         mainPage.clickSearchButton();
-        mainPage.openProductFromSearchResults("10.0 MP, 3.3x optical, DIGIC III, 2.5” LCD, red");
-        mainPage.clickAddCardButtonOnProductPage();
-        mainPage.clickCheckOutButtonInCartPopUp();
-        assertEquals("$85.59", mainPage.getOrderSubtotal(),"Order Subtotal is incorrect"); //junit_5
-        Assert.assertEquals("Order Total is incorrect","$85.59", mainPage.getOrderTotal()); //junit_4
+        searchResultPage.openProductFromSearchResults("10.0 MP, 3.3x optical, DIGIC III, 2.5” LCD, red");
+        productPage.clickAddCardButtonOnProductPage();
+        productPage.clickCheckOutButtonInCartPopUp();
+        assertEquals("$85.59", cartPage.getOrderSubtotal(),"Order Subtotal is incorrect"); //junit_5
+        Assert.assertEquals("Order Total is incorrect","$85.59", cartPage.getOrderTotal()); //junit_4
 
-        mainPage.clickCheckOutSecondButtonInCartPage();
-        mainPage.fillInGuestEmail("test@user.com");
-        mainPage.fillInConfirmGuestEmail("test@user.com");
-        mainPage.clickCheckOutAsGuestButtonInCartPage();
+        cartPage.clickCheckOutSecondButtonInCartPage();
+        loginCheckOutPage.fillInGuestEmail("test@user.com");
+        loginCheckOutPage.fillInConfirmGuestEmail("test@user.com");
+        loginCheckOutPage.clickCheckOutAsGuestButtonInCartPage();
 
         assertAll("Some error text",
-                ()->assertEquals("$85.59", mainPage.getOrderSubtotalDeliveryPage(), "Order Subtotal is incorrect"),
-                ()->assertEquals("$89.87", mainPage.getOrderTotalDeliveryPage(), "Order Total is incorrect")
+                ()->assertEquals("$85.59", deliveryAddressPage.getOrderSubtotalDeliveryPage(), "Order Subtotal is incorrect"),
+                ()->assertEquals("$89.87", deliveryAddressPage.getOrderTotalDeliveryPage(), "Order Total is incorrect")
         );
 
-        softly.assertThat(mainPage.getOrderTaxDeliveryPage()).as("Order Tax is incorrect").isEqualTo("$4.28");
+        softly.assertThat(deliveryAddressPage.getOrderTaxDeliveryPage()).as("Order Tax is incorrect").isEqualTo("$4.28");
         softly.assertAll();
     }
 

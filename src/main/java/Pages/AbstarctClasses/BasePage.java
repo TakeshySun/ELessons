@@ -16,19 +16,8 @@ public class BasePage {
         return driver.findElements(locator).size() > 0;
     }
 
-    public WebElement findByCss(String locator){
-        return driver.findElement(By.cssSelector(locator));
-    }
-
-    public WebElement findByXPath(String locator){
-        return driver.findElement(By.xpath(locator));
-    }
-
-    public WebElement findsByCss(String locator){
-        return driver.findElement(By.cssSelector(locator));
-    }
-
-    public WebElement findsByXPath(String locator){
-        return driver.findElement(By.xpath(locator));
+    public void clearAndSendKeys(By locator, String keys){
+        driver.findElement(locator).clear();
+        driver.findElement(locator).sendKeys(keys);
     }
 }

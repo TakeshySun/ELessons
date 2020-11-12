@@ -7,19 +7,17 @@ import Pages.PropertyReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.ie.InternetExplorerOptions;
 
 public class WebDriverSingleton
 {
-    private static WebDriver webDriver;
+    private WebDriver webDriver;
     protected static BasePage basePage;
 
-    public static void initialize(String browser)
+    public void initialize(String browser)
     {
-        //Use Of Singleton Concept and Initilize webDriver
+        //Use Of Singleton Concept and Initialize webDriver
         if(webDriver == null)
         {
             switch (browser) {
@@ -49,25 +47,21 @@ public class WebDriverSingleton
         webDriver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     }
 
-    public static void quit()
+    public void quit()
     {
         webDriver.quit();
         webDriver =null; // we destroy the driver object after quit operation
     }
 
-    public static void close()
+    public void close()
     {
         webDriver.close();
         webDriver =null;  // we destroy the driver object after quit operation
     }
 
-    public  static void openurl(String KEY) throws Exception {
+    public  void openurl(String KEY) throws Exception {
         webDriver.get(PropertyReader.getProperties(KEY));
     }
 
-    public WebDriver getDriver()
-    {
-        return webDriver;
-    }
 }
 

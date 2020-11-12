@@ -1,6 +1,6 @@
 package Tests.AutomationTasks;
 
-import Pages.B2C_Accelerator.MainPage;
+import Pages.B2C_Accelerator.Page.MainPage;
 import Pages.PropertyReader;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,12 +32,12 @@ public class Automation_Task_1 {
         mainPage = new MainPage();
     }
 
-    @Test
-    public void test(){
-        mainPage.fillInSearchField("camileo");
-        mainPage.clickSearchButton();
-        mainPage.addToCartByProductName("S10 EU 5MP CMOS");
-        mainPage.closeAddToCartPopUp();
-        mainPage.openProductFromSearchResults("S10 EU 5MP CMOS");
-    }
+//    @Test
+//    public void test(){
+//        mainPage.fillInSearchField("camileo");
+//        mainPage.clickSearchButton();
+//        mainPage.addToCartByProductName("S10 EU 5MP CMOS");
+//        mainPage.closeAddToCartPopUp();
+//        mainPage.openProductFromSearchResults("S10 EU 5MP CMOS");
+//    }
 }
