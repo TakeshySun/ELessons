@@ -3,7 +3,7 @@ package AutomationFramework.driver;
 import java.util.concurrent.TimeUnit;
 
 import AutomationFramework.AbstarctClasses.BasePage;
-import AutomationFramework.PropertyReader;
+import AutomationFramework.utils.PropertyReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
