@@ -15,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StepsDef {
     static WebDriverSingleton driver;
-    static SoftAssertions softly;
     static MainPage mainPage;
     static CartPage cartPage;
     static DeliveryAddress deliveryAddressPage;
@@ -27,7 +26,6 @@ public class StepsDef {
     public void setUp(){
         driver = new WebDriverSingleton();
         mainPage = new MainPage();
-        softly = new SoftAssertions();
         cartPage = new CartPage();
         loginCheckOutPage = new LoginCheckOutPage();
         productPage = new ProductPage();
@@ -99,6 +97,7 @@ public class StepsDef {
 
     @Then("Subtotal is {string}, Total is {string}, Tax is {string}")
     public void subtotal_is(String subtotal, String total, String tax) {
+        SoftAssertions softly = new SoftAssertions();
         softly.assertThat(deliveryAddressPage.getOrderSubtotalDeliveryPage()).as("Order Subtotal is incorrect").isEqualTo(subtotal);
         softly.assertThat(deliveryAddressPage.getOrderTotalDeliveryPage()).as("Order Total is incorrect").isEqualTo(total);
         softly.assertThat(deliveryAddressPage.getOrderTaxDeliveryPage()).as("Order Tax is incorrect").isEqualTo(tax);
