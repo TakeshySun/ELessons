@@ -7,7 +7,7 @@ package Tests.AutomationTasks;
 - вивести на екран список усіх силок (унікальних), які є на головній сторінці
  */
 
-import Pages.GlossUa.MainPageGloss;
+import GlossUa.MainPageGloss;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Automation_Task_3 {
+public class Automation_Task_3_Gloss_Ua {
     WebDriver driver;
     MainPageGloss mainPageGloss;
 

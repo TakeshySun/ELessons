@@ -1,7 +1,7 @@
 package Tests.AutomationTasks;
 
-import Pages.B2C_Accelerator.MainPage;
-import Pages.PropertyReader;
+import AutomationFramework.B2C_Accelerator.Page.MainPage;
+import AutomationFramework.utils.PropertyReader;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,7 +28,7 @@ public class Automation_Task_2 {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(PropertyReader.getProperties("url"));
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
     }
 
     @Test

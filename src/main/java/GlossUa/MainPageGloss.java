@@ -1,4 +1,4 @@
-package Pages.GlossUa;
+package GlossUa;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

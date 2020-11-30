@@ -1,9 +1,8 @@
 package Tests.AutomationTasks;
 
-import Pages.B2C_Accelerator.MainPage;
-import Pages.PropertyReader;
+import AutomationFramework.B2C_Accelerator.Page.MainPage;
+import AutomationFramework.utils.PropertyReader;
 import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -29,15 +28,15 @@ public class Automation_Task_1 {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(PropertyReader.getProperties("url"));
-        mainPage = new MainPage(driver);
+        mainPage = new MainPage();
     }
 
-    @Test
-    public void test(){
-        mainPage.fillInSearchField("camileo");
-        mainPage.clickSearchButton();
-        mainPage.addToCartByProductName("S10 EU 5MP CMOS");
-        mainPage.closeAddToCartPopUp();
-        mainPage.openProductFromSearchResults("S10 EU 5MP CMOS");
-    }
+//    @Test
+//    public void test(){
+//        mainPage.fillInSearchField("camileo");
+//        mainPage.clickSearchButton();
+//        mainPage.addToCartByProductName("S10 EU 5MP CMOS");
+//        mainPage.closeAddToCartPopUp();
+//        mainPage.openProductFromSearchResults("S10 EU 5MP CMOS");
+//    }
 }
