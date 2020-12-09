@@ -39,12 +39,12 @@ public class StepsDef {
         driver.quit();
     }
 
-    @Given("I on main page")
+    @Given("^(I|User|Admin) on ([\\s\\w]+ page)$")
     public void openMainPage() throws Exception {
         driver.openurl("url");
     }
 
-    @When("I type in search field {string}")
+    @When("^(I|User|Admin) type in search field ([\\s\\w\\D]+)$")
     public void searchForProduct(String searchText) {
         mainPage.fillInSearchField(searchText);
     }
