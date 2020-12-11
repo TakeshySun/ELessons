@@ -14,17 +14,17 @@ import java.util.regex.Pattern;
 public class RegExContact {
 
     public static void main(String[] args) {
-//        WebDriver driver = new ChromeDriver();
-//
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//        driver.get("https://www.epam.com/about/who-we-are/contact");
-//
-//        WebElement text = driver.findElement(By.cssSelector(" p:nth-child(1) > b > span > span"));
-//        String fullText = text.getText();
-//        System.out.println(fullText);
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("https://www.epam.com/about/who-we-are/contact");
+
+        WebElement text = driver.findElement(By.cssSelector(" p:nth-child(1) > b > span > span"));
+        String fullText = text.getText();
+        System.out.println(fullText);
         System.out.println("-------------------");
 
-        String fullText = "41 University Drive • Suite 202,\nNewtown, PA 18940 • USA";
+//        String fullText = "41 University Drive • Suite 202,\nNewtown, PA 18940 • USA";
         String regEx = "^(.+),\\n(.+),(.+)$";
         String fullPath = getData(fullText, regEx, 0);
         String zipCountry = getData(fullText, regEx, 3);
@@ -43,7 +43,7 @@ public class RegExContact {
         System.out.println(city);
         System.out.println(zip);
         System.out.println(country);
-//        driver.close();
+        driver.close();
     }
 
     public static String getData(String text, String regEx, int group){
