@@ -25,25 +25,31 @@ public class RegularPattern {
         emails.add("user1@domain.com");
         emails.add("user2.name@domain.com");
         emails.add("user#@domain.co.in");
-        emails.add("user@domaincom");
         //Invalid emails
+        emails.add("user@domaincom");
         emails.add("fail#domain.com");
         emails.add("@gmail.com");
+        emails.add("ff,ff@.");
+        emails.add(" @ . ");
+        emails.add(" @k. ");
+        emails.add("@k. ");
         //Pattern
-        String regex = "^(.+)@(.+)$";
+        String regex = "^(.+\\S)@(.+\\S)\\.(.+\\S)$";
         //Method
-        getCorrectEmails(emails, regex);
+        System.out.println(getCorrectEmails(emails, regex));
     }
 
-    public static void getCorrectEmails(List<String> emails, String regEx){
+    public static List<String> getCorrectEmails(List<String> emails, String regEx){
         Pattern pattern = Pattern.compile(regEx);
-
+        List<String> matchesValue = new ArrayList<>();
         for(String email : emails){
             Matcher matcher = pattern.matcher(email);
             if (matcher.matches()){
-                System.out.println(email +" : "+ matcher.matches());
+                matchesValue.add(email);
             }
         }
+        return matchesValue;
+
     }
 
 
