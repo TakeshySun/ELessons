@@ -23,10 +23,10 @@ public class RegularPattern {
         System.out.println(listIp());
     }
 
-    public static List<String> getCorrectValues(List<String> emails, String regEx){
+    public static List<String> getCorrectValues(List<String> values, String regEx){
         Pattern pattern = Pattern.compile(regEx);
         List<String> matchesValue = new ArrayList<>();
-        for(String email : emails){
+        for(String email : values){
             Matcher matcher = pattern.matcher(email);
             if (matcher.matches()){
                 matchesValue.add(email);
